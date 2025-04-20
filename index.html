@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sina Karimi - Software Engineer</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-container">
+    <div class="section">
+        <!-- Navigation with Theme Toggle -->
+        <div class="nav-container">
+            <div class="nav">
+                <a href="#home-content" class="nav-item active" data-page="home">Home</a>
+                <a href="#projects-content" class="nav-item" data-page="projects">Projects</a>
+                <a href="#cv-content" class="nav-item" data-page="cv">CV</a>
+            </div>
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-sun" id="theme-icon"></i>
+                <div class="toggle-switch"></div>
+            </div>
+        </div>
+
+        <!-- Main Content Section with fixed profile on left -->
+        <div class="content-wrapper">
+            <!-- Profile Column (Left) - Stays consistent across all pages -->
+            <div class="profile-column">
+                <img src="assets/photo_2023-02-12_13-19-57.jpg" alt="Sina Karimi" class="profile-image">
+                <h3 class="profile-name">Sina Karimi</h3>
+                <p class="profile-title">Software Engineer</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/sina-karimi-200752259" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Sina-karimi81" class="social-link"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <!-- Main Content Area (Right) - Changes with navigation -->
+            <div class="main-content">
+                <!-- Home Page Content -->
+                <div id="home-content" class="page-content">
+                    <div class="content-header">
+                        <h2>About Me</h2>
+                    </div>
+                    <h3 class="university-header">Amirkabir University of Technology</h3>
+                    <h4 class="company-header">TOSAN (Banking & Payment Solutions)</h4>
+                    <p class="bio-text">I am a computer engineering student at Amirkabir University of Technology.</p>
+                    <p class="bio-text">I also work as a Java backend engineer working with webservices, BPMS and databases with passion for complex and business heavy systems.</p>
+                </div>
+
+                <!-- Projects Page Content -->
+                <div id="projects-content" class="page-content" style="display: none;">
+                    <div class="content-header">
+                        <h2>Projects</h2>
+                    </div>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <img src="assets/java-logo.png" alt="JSON Parser">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">JSON Parser</h3>
+                                <p class="project-description">A JSON written in java, using the reflection standard library
+                                    to serialize and deserialize java objects and classes to JSON representation and vice versa.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <img src="assets/java-logo.png" alt="Java Download Manager">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Java Download Manager</h3>
+                                <p class="project-description">An IDM clone written in Java as a desktop application.
+                                    using Java's standard library and JavaFX library.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <img src="assets/java-logo.png" alt="Order Tracking System">
+                                <img src="assets/docker-logo.png" alt="Order Tracking System">
+                                <img src="assets/kubernetes-logo.png" alt="Order Tracking System">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Order Tracking System</h3>
+                                <p class="project-description">This project is a cloud-native order tracking application
+                                    built using Java Spring Boot, Docker, and Kubernetes. The application provides RESTful APIs for registering orders, approving or rejecting them, and checking order status.
+                                    It is backed by a PostgreSQL master-slave architecture, ensuring that write operations go to the master database while read operations are handled by the slave.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CV Page Content -->
+                <div id="cv-content" class="page-content" style="display: none;">
+                    <div class="content-header">
+                        <h2>Curriculum Vitae</h2>
+                    </div>
+
+                    <div class="cv-section">
+                        <h3>Work Experience</h3>
+                        <div class="experience-item">
+                            <h4 class="experience-title">Mid-Level Backend Developer</h4>
+                            <p class="experience-company">TOSAN (Banking & Payment Solutions)</p>
+                            <p class="experience-date">January 2021 - Present</p>
+                            <ul class="experience-list">
+                                <li>Maintenance of the current system and implementing new features</li>
+                                <li>Worked with Activi Workflow engine to create and test workflows using BPMN</li>
+                                <li>Familiarity with ISO-8583 Message Protocol and JPOS library</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cv-section">
+                        <h3>Education</h3>
+                        <div class="education-item">
+                            <h4 class="education-title">Bachelor of Science in Computer Engineering</h4>
+                            <p class="education-school">Amirkabir University of Technology</p>
+                            <p class="education-date">2020 - Present</p>
+                            <p class="education-courses">
+                                Courses: Data Structures and Algorithms, Operating Systems, Database Design,
+                                Software Engineering, Computer Networks, Artificial Intelligence
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navigation
+        const navItems = document.querySelectorAll('.nav-item');
+        const pages = document.querySelectorAll('.page-content');
+
+        // Handle navigation click
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetPage = this.getAttribute('data-page');
+
+                // Show the target page and hide others
+                pages.forEach(page => {
+                    if (page.id === targetPage + '-content') {
+                        page.style.display = 'block';
+                    } else {
+                        page.style.display = 'none';
+                    }
+                });
+
+                // Update active nav item
+                navItems.forEach(navItem => {
+                    if (navItem === this) {
+                        navItem.classList.add('active');
+                    } else {
+                        navItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or use preferred color scheme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        } else {
+            // Check if user prefers dark mode
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDarkMode) {
+                htmlElement.setAttribute('data-theme', 'dark');
+                updateThemeIcon('dark');
+            }
+        }
+
+        // Theme toggle click handler
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            updateThemeIcon(newTheme);
+        });
+
+        // Update theme icon based on current theme
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        }
+    });
+</script>
+</body>
+</html>
