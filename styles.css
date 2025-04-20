@@ -355,6 +355,8 @@ body {
 
 .education-item {
     margin-bottom: 20px;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 15px;
 }
 
 .education-title {
