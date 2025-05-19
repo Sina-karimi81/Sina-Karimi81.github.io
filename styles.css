@@ -1,29 +1,29 @@
 :root {
-    /* Light Theme Variables */
-    --bg-color: #f0f2f5;
-    --card-bg: #ffffff;
-    --text-color: #333333;
-    --text-secondary: #7f8c8d;
-    --border-color: #eeeeee;
-    --primary-color: #3498db;
-    --secondary-color: #2980b9;
-    --nav-bg: #f8f9fa;
-    --nav-item-bg: #e4e9f0;
+    /* Light Theme */
+    --bg-color: #DDDBDB;         /* page background */
+    --card-bg: #F5F1E3;          /* cards/sections */
+    --text-color: #050505;       /* main text */
+    --text-secondary: #1B9AAA;   /* muted/interactive text */
+    --border-color: #DDDBDB;     /* subtle border */
+    --primary-color: #1B9AAA;    /* primary action */
+    --secondary-color: #050505;  /* stronger dark accent if needed */
+    --nav-bg: #FFFFFF;
+    --nav-item-bg: #FFFFFF;
     --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
 }
 
 [data-theme="dark"] {
-    /* Dark Theme Variables */
-    --bg-color: #1a1c20;
-    --card-bg: #2c2f33;
-    --text-color: #f0f0f0;
-    --text-secondary: #b9bbbe;
-    --border-color: #40444b;
-    --primary-color: #5cafed;
-    --secondary-color: #3a95db;
-    --nav-bg: #202225;
-    --nav-item-bg: #36393f;
+    /* Dark Theme */
+    --bg-color: #2B2D42;
+    --card-bg: #1a1a1a;
+    --text-color: #EDF2F4;
+    --text-secondary: #8D99AE;
+    --border-color: #8D99AE;
+    --primary-color: #EF233C;
+    --secondary-color: #D90423;
+    --nav-bg: #1a1a1a;
+    --nav-item-bg: #2B2D42;
     --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -189,8 +189,12 @@ body {
     transition: color 0.3s ease;
 }
 
-.social-link:hover {
-    color: var(--primary-color);
+[data-theme="light"] .social-link:hover {
+    color: #0E6E77; /* darker teal for hover in light mode */
+}
+
+[data-theme="dark"] .social-link:hover {
+    color: var(--primary-color); /* keep current behavior */
 }
 
 /* Main Content */
@@ -313,7 +317,7 @@ body {
 
 .experience-title {
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     color: var(--text-color);
     transition: color 0.3s ease;
 }
@@ -321,7 +325,7 @@ body {
 .experience-company {
     font-weight: 500;
     color: var(--primary-color);
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     transition: color 0.3s ease;
 }
 
@@ -362,13 +366,13 @@ body {
 .education-title {
     font-weight: 600;
     color: var(--text-color);
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     transition: color 0.3s ease;
 }
 
 .education-school {
     color: var(--primary-color);
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     transition: color 0.3s ease;
 }
 

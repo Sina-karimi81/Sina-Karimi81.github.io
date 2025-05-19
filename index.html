@@ -12,7 +12,7 @@
 <div class="page-container">
     <div class="section">
         <!-- Navigation with Theme Toggle -->
-        <div class="nav-container">
+        <div class="nav-container" role="navigation">
             <div class="nav">
                 <a href="#home-content" class="nav-item active" data-page="home">Home</a>
                 <a href="#projects-content" class="nav-item" data-page="projects">Projects</a>
@@ -25,21 +25,21 @@
         </div>
 
         <!-- Main Content Section with fixed profile on left -->
-        <div class="content-wrapper">
+        <div class="content-wrapper" role="main">
             <!-- Profile Column (Left) - Stays consistent across all pages -->
-            <div class="profile-column">
+            <div class="profile-column" role="banner">
                 <img src="assets/photo_2023-02-12_13-19-57.jpg" alt="Sina Karimi" class="profile-image">
                 <h3 class="profile-name">Sina Karimi</h3>
                 <p class="profile-title">Software Engineer</p>
                 <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" onclick="copyFunction()" class="social-link"><i class="fa fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/sina-karimi-200752259" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/Sina-karimi81" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
                 </div>
             </div>
 
             <!-- Main Content Area (Right) - Changes with navigation -->
-            <div class="main-content">
+            <div class="main-content" role="contentinfo">
                 <!-- Home Page Content -->
                 <div id="home-content" class="page-content">
                     <div class="content-header">
@@ -110,8 +110,8 @@
                         <h3>Work Experience</h3>
                         <div class="experience-item">
                             <h4 class="experience-title">Mid-Level Backend Developer</h4>
-                            <p class="experience-company">TOSAN (Banking & Payment Solutions)</p>
-                            <p class="experience-date">January 2021 - Present</p>
+                            <h5 class="experience-company">TOSAN (Banking & Payment Solutions)</h5>
+                            <span class="experience-date">January 2021 - Present</span>
                             <ul class="experience-list">
                                 <li>Maintenance of the current system and implementing new features</li>
                                 <li>Worked with Activi Workflow engine to create and test workflows using BPMN</li>
@@ -124,8 +124,8 @@
                         <h3>Education</h3>
                         <div class="education-item">
                             <h4 class="education-title">Bachelor of Science in Computer Engineering</h4>
-                            <p class="education-school">Amirkabir University of Technology</p>
-                            <p class="education-date">2020 - Present</p>
+                            <h5 class="education-school">Amirkabir University of Technology</h5>
+                            <span class="education-date">2020 - Present</span>
                             <p class="education-courses">
                                 Courses: Data Structures and Algorithms, Operating Systems, Database Design,
                                 Software Engineering, Computer Networks, Artificial Intelligence
@@ -139,6 +139,17 @@
 </div>
 
 <script>
+    function copyFunction() {
+        const email = "sina.k.career@gmail.com"
+        navigator.clipboard.writeText(email)
+            .then(() => {
+                alert('Text copied to clipboard: ' + email);
+            })
+            .catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         // Navigation
         const navItems = document.querySelectorAll('.nav-item');
