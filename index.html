@@ -7,6 +7,8 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="functions.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
 <div class="page-container">
@@ -28,7 +30,7 @@
         <div class="content-wrapper" role="main">
             <!-- Profile Column (Left) - Stays consistent across all pages -->
             <div class="profile-column" role="banner">
-                <img src="assets/photo_2023-02-12_13-19-57.jpg" alt="Sina Karimi" class="profile-image">
+                <img src="assets/photo_2025-08-21_18-48-15.jpg" alt="Sina Karimi" class="profile-image">
                 <h3 class="profile-name">Sina Karimi</h3>
                 <p class="profile-title">Software Engineer</p>
                 <div class="social-links" role="link">
@@ -57,46 +59,26 @@
                 </div>
 
                 <!-- Projects Page Content -->
-                <div id="projects-content" class="page-content" style="display: none;">
+                <div id="projects-content" class="page-content" style="display: none;" x-data="projectData()" x-init="fetchProjects()">
                     <div class="content-header">
                         <h2>Projects</h2>
                     </div>
                     <div class="projects-grid">
-                        <div class="project-card">
-                            <div class="project-icon">
-                                <img src="assets/java-logo.png" alt="JSON Parser">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">JSON Parser</h3>
-                                <p class="project-description">A JSON written in java, using the reflection standard library
-                                    to serialize and deserialize java objects and classes to JSON representation and vice versa.</p>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-icon">
-                                <img src="assets/java-logo.png" alt="Java Download Manager">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Java Download Manager</h3>
-                                <p class="project-description">An IDM clone written in Java as a desktop application.
-                                    using Java's standard library and JavaFX library.</p>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-icon">
-                                <img src="assets/java-logo.png" alt="Order Tracking System">
-                                <img src="assets/docker-logo.png" alt="Order Tracking System">
-                                <img src="assets/kubernetes-logo.png" alt="Order Tracking System">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Order Tracking System</h3>
-                                <p class="project-description">This project is a cloud-native order tracking application
-                                    built using Java Spring Boot, Docker, and Kubernetes. The application provides RESTful APIs for registering orders, approving or rejecting them, and checking order status.
-                                    It is backed by a PostgreSQL master-slave architecture, ensuring that write operations go to the master database while read operations are handled by the slave.</p>
-                            </div>
-                        </div>
+                        <template x-for="project in projects" :key="project.id">
+                            <a :href="project.url" style="text-decoration: none; display: flex;">
+                                <div class="project-card">
+                                    <div class="project-icon">
+                                        <template x-for="asset in project.assets" :key="asset.source">
+                                            <img :src="asset.source" :alt="asset.alt">
+                                        </template>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="project-title" x-text="project.title"></h3>
+                                        <p class="project-description" x-text="project.description"></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </template>
                     </div>
                 </div>
 
@@ -106,18 +88,20 @@
                         <h2>Curriculum Vitae</h2>
                     </div>
 
-                    <div class="cv-section">
+                    <div class="cv-section" x-data="workExperienceData()" x-init="fetchWorks()">
                         <h3>Work Experience</h3>
-                        <div class="experience-item">
-                            <h4 class="experience-title">Mid-Level Backend Developer</h4>
-                            <h5 class="experience-company">TOSAN (Banking & Payment Solutions)</h5>
-                            <span class="experience-date">January 2021 - Present</span>
-                            <ul class="experience-list">
-                                <li>Maintenance of the current system and implementing new features</li>
-                                <li>Worked with Activi Workflow engine to create and test workflows using BPMN</li>
-                                <li>Familiarity with ISO-8583 Message Protocol and JPOS library</li>
-                            </ul>
-                        </div>
+                        <template x-for="work in works" :key="work.id">
+                            <div class="experience-item">
+                                <h4 class="experience-title" x-text="work.title"></h4>
+                                <h5 class="experience-company" x-text="work.company"></h5>
+                                <span class="experience-date" x-text="work.date"></span>
+                                <ul class="experience-list">
+                                    <template x-for="item in work.items">
+                                        <li x-text="item"></li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </template>
                     </div>
 
                     <div class="cv-section">
@@ -138,90 +122,6 @@
     </div>
 </div>
 
-<script>
-    function copyFunction() {
-        const email = "sina.k.career@gmail.com"
-        navigator.clipboard.writeText(email)
-            .then(() => {
-                alert('Text copied to clipboard: ' + email);
-            })
-            .catch(err => {
-                console.error('Failed to copy text: ', err);
-            });
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        // Navigation
-        const navItems = document.querySelectorAll('.nav-item');
-        const pages = document.querySelectorAll('.page-content');
-
-        // Handle navigation click
-        navItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetPage = this.getAttribute('data-page');
-
-                // Show the target page and hide others
-                pages.forEach(page => {
-                    if (page.id === targetPage + '-content') {
-                        page.style.display = 'block';
-                    } else {
-                        page.style.display = 'none';
-                    }
-                });
-
-                // Update active nav item
-                navItems.forEach(navItem => {
-                    if (navItem === this) {
-                        navItem.classList.add('active');
-                    } else {
-                        navItem.classList.remove('active');
-                    }
-                });
-            });
-        });
-
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const htmlElement = document.documentElement;
-
-        // Check for saved theme preference or use preferred color scheme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            htmlElement.setAttribute('data-theme', savedTheme);
-            updateThemeIcon(savedTheme);
-        } else {
-            // Check if user prefers dark mode
-            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            if (prefersDarkMode) {
-                htmlElement.setAttribute('data-theme', 'dark');
-                updateThemeIcon('dark');
-            }
-        }
-
-        // Theme toggle click handler
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-
-            updateThemeIcon(newTheme);
-        });
-
-        // Update theme icon based on current theme
-        function updateThemeIcon(theme) {
-            if (theme === 'dark') {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            } else {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            }
-        }
-    });
-</script>
+<script ></script>
 </body>
 </html>

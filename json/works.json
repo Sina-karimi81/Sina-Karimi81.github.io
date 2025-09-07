@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Junior Backend Developer",
+    "company": "TOSAN (Banking and Payment solutions)",
+    "date": "Feb 2022 - Dec 2024",
+    "items": [
+      "Migrating from EJB to Spring",
+      "Streamlining multiple Activiti Workflow processes into to one process improve user experience and readable code",
+      "Familiarity with ISO-8583 Message Protocol and JPOS library",
+      "Optimizing SQL and hibernate mappings which resulted in an average of 15% faster response time"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Mid-Level Backend Developer",
+    "company": "TOSAN (Banking and Payment solutions)",
+    "date": "Dec 2024 - Present",
+    "items": [
+      "Designed and implemented RESTful APIs and data models for a brand new monitoring application for ATM and POS devices",
+      "Designed and implemented RESTful APIs and data models for the GAM project in conjunction with coordinating tasks with team members and other staff"
+    ]
+  }
+]
