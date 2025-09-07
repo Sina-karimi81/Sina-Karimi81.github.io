@@ -65,7 +65,7 @@
                     </div>
                     <div class="projects-grid">
                         <template x-for="project in projects" :key="project.id">
-                            <a :href="project.url" style="text-decoration: none; display: flex;">
+                            <a :href="project.url" target="_blank" style="text-decoration: none; display: flex;">
                                 <div class="project-card">
                                     <div class="project-icon">
                                         <template x-for="asset in project.assets" :key="asset.source">
