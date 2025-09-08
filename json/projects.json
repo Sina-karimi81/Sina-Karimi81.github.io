@@ -62,5 +62,17 @@
     ],
     "title": "Cloud Native Application",
     "description": "This project is a cloud-native image generation application built using Java Spring Boot, Docker, and RabbitMQ. The application is a combination of three microservices and it connects to thrid-party services such as image-to-text and text-to-image and an object store."
+  },
+  {
+    "id": 5,
+    "url": "https://github.com/Sina-karimi81/TODO-list-CLI",
+    "assets": [
+      {
+        "source": "assets/golang-logo.png",
+        "alt": "Java"
+      }
+    ],
+    "title": "Todo-list CLI",
+    "description": "This project is a CLI todo list app made with cobra and golang, using a .csv file to store data."
   }
 ]
