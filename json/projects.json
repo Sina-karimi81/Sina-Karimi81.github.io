@@ -73,6 +73,6 @@
       }
     ],
     "title": "Todo-list CLI",
-    "description": "This project is a CLI todo list app made with cobra and golang, using a .csv file to store data."
+    "description": "A simple and efficient command-line todo list application built with Go and Cobra CLI. This application allows you to manage your tasks directly from the terminal with persistent CSV-based storage.."
   }
 ]
