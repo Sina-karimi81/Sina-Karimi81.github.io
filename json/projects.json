@@ -69,10 +69,22 @@
     "assets": [
       {
         "source": "assets/golang-logo.png",
-        "alt": "Java"
+        "alt": "Golang"
       }
     ],
     "title": "Todo-list CLI",
     "description": "A simple and efficient command-line todo list application built with Go and Cobra CLI. This application allows you to manage your tasks directly from the terminal with persistent CSV-based storage.."
+  },
+  {
+    "id": 6,
+    "url": "https://github.com/Sina-karimi81/TODO-list-CLI-V2",
+    "assets": [
+      {
+        "source": "assets/golang-logo.png",
+        "alt": "Golang"
+      }
+    ],
+    "title": "Todo-list CLI V2",
+    "description": "A simple and efficient command-line todo list application built with Go and Cobra CLI. This application allows you to manage your tasks directly from the terminal with persistent sqlite"
   }
 ]
