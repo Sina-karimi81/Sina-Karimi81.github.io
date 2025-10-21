@@ -1,24 +1,23 @@
 [
   {
     "id": 1,
-    "title": "Junior Backend Developer",
+    "title": "Back-End Software Engineer",
     "company": "TOSAN (Banking and Payment solutions)",
-    "date": "Feb 2022 - Dec 2024",
+    "date": "Feb 2022 - Present",
     "items": [
-      "Migrating from EJB to Spring",
-      "Streamlining multiple Activiti Workflow processes into to one process improve user experience and readable code",
-      "Familiarity with ISO-8583 Message Protocol and JPOS library",
-      "Optimizing SQL and hibernate mappings which resulted in an average of 15% faster response time"
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Mid-Level Backend Developer",
-    "company": "TOSAN (Banking and Payment solutions)",
-    "date": "Dec 2024 - Present",
-    "items": [
-      "Designed and implemented RESTful APIs and data models for a brand new monitoring application for ATM and POS devices",
-      "Designed and implemented RESTful APIs and data models for the GAM project in conjunction with coordinating tasks with team members and other staff"
+      "Migrating from EJB to Spring framework, improving maintainbility and readibilty",
+      "Optimized database queries, achieving 10–20% faster response times across key services",
+      "Wrote logic to dynamically create the path to a file in a FTP server based on the configuration provided by the client using Chain of Responsibility design pattern",
+      "Developed and maintained an eventlog system using Reflection, Spring-AOP and java annotations to keep a log of user activities",
+      "Added offline report generation support to multiple services using Activiti framework and JasperReports library and task scheduling",
+      "Unified and Improved multiple BPMS procedures into one single procedure, Using Strategy and Template method design patterns, REST services and ISO-8583 communication protocol and Activiti task scheduling",
+      "Developed a terminal simulator application to simulate messaging flows using JPOS and spring boot for testing purposes",
+      "Designed and developed the logic and datamodel of a brand new monitoring dashboard for real-time monitoring of ATM and POS devices. using H2 database and Junit 5 for testing and JPA Specification for dynamic query generation alongside JPA repositories",
+      "Developed project GAM (Generative Bonds Certificate) by implementing logic and datamodel alongside coordinating with other teams and team members on development. using H2 database and Junit 5 and Wiremock for testing and JPA Specification for dynamic query generation alongside JPA repositories",
+      "Improving and migrating our current systems into newer versions and frameworks",
+      "Developed new Restful services for various features",
+      "Created views of our datamodel to be used in IRMA project",
+      "Refactoring and overall system improvements"
     ]
   }
 ]

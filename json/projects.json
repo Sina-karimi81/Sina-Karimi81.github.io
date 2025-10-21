@@ -86,5 +86,29 @@
     ],
     "title": "Todo-list CLI V2",
     "description": "A simple and efficient command-line todo list application built with Go and Cobra CLI. This application allows you to manage your tasks directly from the terminal with persistent sqlite"
+  },
+  {
+    "id": 7,
+    "url": "https://github.com/Sina-karimi81/Monkey-lang-interpreter",
+    "assets": [
+      {
+        "source": "assets/golang-logo.png",
+        "alt": "Golang"
+      }
+    ],
+    "title": "Monkey Language Interpreter",
+    "description": "An interpreted language runtime written in Go by following the book \"write an interpreter in go\". this language supports integers, strings, arrays, hashes, functions, conditionals and basic arithmatic operations"
+  },
+  {
+    "id": 8,
+    "url": "https://github.com/Sina-karimi81/Currency-Exchange-App",
+    "assets": [
+      {
+        "source": "assets/golang-logo.png",
+        "alt": "Golang"
+      }
+    ],
+    "title": "Currency Exchange TUI",
+    "description": "A simple and elegant command-line currency converter built with Go, featuring an interactive terminal user interface powered by the huh library. Using go’s built-in http package to fetch live currency exchange rates from a reliable API"
   }
 ]
